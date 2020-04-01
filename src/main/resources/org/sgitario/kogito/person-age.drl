@@ -1,0 +1,9 @@
+package org.sgitario.kogito
+
+rule R when
+        $r : Result()
+        $p1 : Person(name == "Jose")
+        $p2 : Person(name != "Jose", age > $p1.age)
+    then
+        $r.setOlder(true);
+end
